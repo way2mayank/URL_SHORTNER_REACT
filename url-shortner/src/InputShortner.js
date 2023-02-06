@@ -5,7 +5,7 @@ const InputShortner = ({setInputValue}) => {
 
   const handleClick= ()=>{
     setInputValue(value)
-    setValue('')
+    setValue('');
   }
 
   return (
@@ -18,9 +18,9 @@ const InputShortner = ({setInputValue}) => {
           type="text"
           placeholder="Paste url to sorten"
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={e => setValue(e.target.value)}
         />
-        <button onClick={handleClick}>SORTEN</button>
+        <button onClick={handleClick}>SHORTEN</button>
       </div>
     </div>
   );

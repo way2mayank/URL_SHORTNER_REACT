@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const LinkResult = ({ inputValue }) => {
-  console.log(inputValue);
   const [sortenLink, setSortenLink] = useState("");
   const [copied, setCopied] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -40,7 +39,7 @@ const LinkResult = ({ inputValue }) => {
     return <p className="noData"> loading...</p>;
   }
   if (error) {
-    return <p className="noData"> Somthing went wrong :( </p>;
+    return <p className="noData"> Somthing went wrong  </p>;
   }
 
   return (
@@ -49,7 +48,9 @@ const LinkResult = ({ inputValue }) => {
         <div className="result">
           <p>{sortenLink}</p>
 
-          <CopyToClipboard text={sortenLink} onCopy={() => setCopied(true)}>
+          <CopyToClipboard 
+          text={sortenLink} 
+          onCopy={() => setCopied(true)}>
             <button className={copied ? "copied" : ""}>
               Copy to clipboard
             </button>
